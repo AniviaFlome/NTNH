@@ -531,15 +531,19 @@
     },
     {
       "input": ["item","hbm:item.bedrock_ore",1,2840],
-      "output1": ["Glowstone",1152],
+      "output1": ["Slag",144],
       "byproducts": [
+        ["hbm:item.bedrock_ore_fragment",64,5],
         ["hbm:item.bedrock_ore",1,3352]
       ],
       "duration": 20
     },
     {
       "input": ["item","hbm:item.bedrock_ore",1,3352],
-      "output1": ["Glowstone",288],
+      "output1": ["Slag",144],
+      "byproducts": [
+        ["hbm:item.bedrock_ore_fragment",36,5]
+      ],
       "duration": 20
     },
     {

@@ -134,14 +134,6 @@
       "output": [["Iron",144],["Titanium",24],["Stone",162]]
     },
     {
-      "input": ["dict","oreNetherThorium232"],
-      "output": [["Thorium232",144],["Uranium",24],["Stone",162]]
-    },
-    {
-      "input": ["dict","oreNetherTh232"],
-      "output": [["Thorium232",144],["Uranium",24],["Stone",162]]
-    },
-    {
       "input": ["dict","oreTh232"],
       "output": [["Thorium232",144],["Uranium",24],["Stone",162]]
     },
@@ -200,10 +192,6 @@
     {
       "input": ["dict","oreUranium"],
       "output": [["Uranium",144],["Lead",24],["Stone",162]]
-    },
-    {
-      "input": ["dict","oreNetherThorium"],
-      "output": [["Thorium232",144],["Uranium",24],["Stone",162]]
     },
     {
       "input": ["dict","oreNickel"],
