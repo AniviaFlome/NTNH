@@ -115,3 +115,9 @@ mods/neodymium-mc1.7.10-0.4.3-unofficial.jar
 mods/angelica-1.0.0-beta41.jar
 mods/angelica-1.0.0-beta41.jar.disabled
 local
+config/GregTech
+config/GTPlusPlus
+config/recipes
+gregtech.cfg
+gregtech.lang
+config/betterquesting.cfg

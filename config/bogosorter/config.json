@@ -10,8 +10,8 @@
     "dropoffPacketThrottleInMS": 500,
     "dropoffTargetNames": "*Chest*, *Barrel*, *Drawer*, *Crate*",
     "dropoffButtonShow": true,
-    "dropoffButtonX": 160,
-    "dropoffButtonY": 5,
+    "dropoffButtonX": 163,
+    "dropoffButtonY": 3,
     "enableHotbarSwap": true,
     "sortSound": "minecraft:gui.button.press",
     "buttonColor": "#ffffffff"

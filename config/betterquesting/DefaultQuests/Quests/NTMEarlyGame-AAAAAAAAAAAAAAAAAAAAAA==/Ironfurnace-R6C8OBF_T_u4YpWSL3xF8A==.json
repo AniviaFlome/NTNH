@@ -32,7 +32,14 @@
   },
   "questIDHigh:4": 5161332121964335099,
   "questIDLow:4": -5160397767918729744,
-  "rewards:9": {},
+  "rewards:9": {
+    "0:10": {
+      "ignoreDisabled:1": 0,
+      "index:3": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {}
+    }
+  },
   "tasks:9": {
     "0:10": {
       "autoConsume:1": 0,

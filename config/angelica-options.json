@@ -1,7 +1,7 @@
 {
   "quality": {
     "grass_quality": "DEFAULT",
-    "use_sodium_a_o": true
+    "use_sodium_a_o": false
   },
   "advanced": {
     "use_vertex_array_objects": false,

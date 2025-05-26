@@ -267,7 +267,11 @@
 					"mainmenu:textures/bg19.png",
 					"mainmenu:textures/bg20.png",
 					"mainmenu:textures/bg21.png",
-					"mainmenu:textures/bg22.png"
+					"mainmenu:textures/bg22.png",
+					"mainmenu:textures/bg23.png",
+					"mainmenu:textures/bg24.png",
+					"mainmenu:textures/bg25.png",
+					"mainmenu:textures/bg26.png"
 				],
 				"displayDuration": 150,
 				"fadeDuration": 40

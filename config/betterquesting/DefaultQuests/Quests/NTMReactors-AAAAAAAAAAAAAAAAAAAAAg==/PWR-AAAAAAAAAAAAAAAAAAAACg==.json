@@ -79,6 +79,18 @@
           "Damage:2": 0,
           "OreDict:8": "",
           "id:8": "hbm:tile.heater_heatex"
+        },
+        "5:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "hbm:tile.pwr_heatex"
+        },
+        "6:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "hbm:tile.pwr_channel"
         }
       },
       "taskID:8": "bq_standard:retrieval"
