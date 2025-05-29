@@ -69,33 +69,27 @@
           "Count:3": 1,
           "Damage:2": 0,
           "OreDict:8": "",
-          "id:8": "hbm:tile.heater_firebox"
+          "id:8": "hbm:tile.foundry_basin"
         },
         "2:10": {
           "Count:3": 1,
           "Damage:2": 0,
           "OreDict:8": "",
-          "id:8": "hbm:tile.foundry_basin"
-        },
-        "3:10": {
-          "Count:3": 1,
-          "Damage:2": 0,
-          "OreDict:8": "",
           "id:8": "hbm:tile.foundry_mold"
         },
-        "4:10": {
+        "3:10": {
           "Count:3": 1,
           "Damage:2": 12,
           "OreDict:8": "",
           "id:8": "hbm:item.mold"
         },
-        "5:10": {
+        "4:10": {
           "Count:3": 1,
           "Damage:2": 2,
           "OreDict:8": "",
           "id:8": "hbm:item.mold"
         },
-        "6:10": {
+        "5:10": {
           "Count:3": 1,
           "Damage:2": 19,
           "OreDict:8": "",

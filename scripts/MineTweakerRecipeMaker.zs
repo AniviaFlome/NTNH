@@ -12,6 +12,8 @@
 
 // ================================================================================
 //#MARKER REMOVE
+recipes.remove(<malisisdoors:block_mixer>);
+recipes.remove(<malisisdoors:item.forcefieldItem>);
 mods.forestry.Carpenter.removeRecipe(<Forestry:flutterlyzer>);
 recipes.remove(<ProjRed|Expansion:projectred.expansion.machine2:11>);
 recipes.remove(<minecraft:flint_and_steel>);
