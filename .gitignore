@@ -121,3 +121,4 @@ config/recipes
 gregtech.cfg
 gregtech.lang
 config/betterquesting.cfg
+config/UniqueNames.txt
