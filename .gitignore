@@ -121,4 +121,6 @@ config/recipes
 gregtech.cfg
 gregtech.lang
 config/betterquesting.cfg
+config/eplus.cfg
+config/malisisdoors.cfg
 config/UniqueNames.txt
