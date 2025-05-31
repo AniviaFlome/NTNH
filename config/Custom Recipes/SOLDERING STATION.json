@@ -1,10 +1,11 @@
      {
       "toppings": [
         ["item","minecraft:redstone",1],
-        ["item","hbm:item.ingot_polymer",1],
         ["item","hbm:item.nugget_silicon",1]
       ],
-      "pcb": [],             
+      "pcb": [
+        ["item","hbm:item.ingot_polymer",1]
+      ],             
       "solder": [],
       "output": ["OpenComputers:item",1,23],
       "duration": 100,
@@ -141,10 +142,12 @@
     },
     {
       "toppings": [
-        ["item","minecraft:redstone",4],
-        ["item","hbm:item.ingot_polymer",1]
+        ["item","minecraft:redstone",4]
       ],
-      "pcb": ["item","hbm:item.circuit",1,3],             
+      "pcb": [
+        ["item","hbm:item.circuit",1,3],
+        ["item","hbm:item.ingot_polymer",1]
+      ],             
       "solder": [],
       "output": ["OpenComputers:item",1,33],
       "duration": 100,
