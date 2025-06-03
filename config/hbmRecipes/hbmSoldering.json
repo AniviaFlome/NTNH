@@ -1,6 +1,6 @@
 {
   "recipes": [
-    {
+     {
       "toppings": [
         ["item","minecraft:redstone",1],
         ["item","hbm:item.nugget_silicon",1]
@@ -710,7 +710,7 @@
       "duration": 100,
       "consumption": 1000
     },
-     { 
+    { 
       "toppings": [
         ["item","appliedenergistics2:item.ItemMultiMaterial",8,9],
         ["item","hbm:item.plate_polymer",16],

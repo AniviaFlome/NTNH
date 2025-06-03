@@ -12,3 +12,12 @@ logs
 fonts
 *.cache
 config/UniqueNames.txt
+crash-reports
+coretweaks
+bettercrashes-stackdeobfuscator-methods.csv
+saves
+XaeroWaypoints
+XaeroWorldMap
+config/JustEnoughCalculation/record.json
+usernamecache.json
+options.txt

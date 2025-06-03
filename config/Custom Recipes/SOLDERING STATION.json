@@ -708,7 +708,7 @@
       "duration": 100,
       "consumption": 1000
     },
-     { 
+    { 
       "toppings": [
         ["item","appliedenergistics2:item.ItemMultiMaterial",8,9],
         ["item","hbm:item.plate_polymer",16],
