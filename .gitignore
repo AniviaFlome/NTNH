@@ -1,2 +1,14 @@
 ﻿.replay_cache
 mods/carpentersblocks/CarpentersBlocksCachedResources.zip
+*.dll
+*.dat
+config/AppliedEnergistics2/CustomRecipes.cfg
+config/AppliedEnergistics2/recipes/items.csv
+updates.html
+minetweaker.log
+optionsnf.txt
+serverutilities
+logs
+fonts
+*.cache
+config/UniqueNames.txt
