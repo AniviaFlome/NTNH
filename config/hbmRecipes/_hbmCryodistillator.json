@@ -1,39 +1,11 @@
 {
   "recipes": [
     {
-      "input": "AIR",
-      "output1": ["NITROGEN",60],
-      "output2": ["CARBONDIOXIDE",5],
-      "output3": ["KRYPTON",10],
-      "output4": ["OXYGEN",25]
-    },
-    {
-      "input": "JOOLGAS",
-      "output1": ["HELIUM3",40],
-      "output2": ["NEON",10],
-      "output3": ["CHLORINE",20],
-      "output4": ["HYDROGEN",30]
-    },
-    {
-      "input": "SARNUSGAS",
-      "output1": ["HYDROGEN",45],
-      "output2": ["NITROGEN",5],
-      "output3": ["GAS",15],
-      "output4": ["HELIUM3",35]
-    },
-    {
-      "input": "TEKTOAIR",
-      "output1": ["CHLORINE",55],
-      "output2": ["PETROLEUM",5],
-      "output3": ["GAS",15],
-      "output4": ["AROMATICS",25]
-    },
-    {
-      "input": "EVEAIR",
-      "output1": ["KMnO4",40],
-      "output2": ["AMMONIA",10],
-      "output3": ["XENON",15],
-      "output4": ["MERCURY",35]
+      "input": "UGAS",
+      "output1": ["OXYGEN",45],
+      "output2": ["AROMATICS",15],
+      "output3": ["METHANOL",15],
+      "output4": ["NITROGEN",25]
     },
     {
       "input": "NGAS",
@@ -43,18 +15,11 @@
       "output4": ["AMMONIA",25]
     },
     {
-      "input": "UGAS",
-      "output1": ["OXYGEN",45],
-      "output2": ["AROMATICS",15],
-      "output3": ["METHANOL",15],
-      "output4": ["NITROGEN",25]
-    },
-    {
-      "input": "MORKINE",
-      "output1": ["UNSATURATEDS",40],
-      "output2": ["HYDROGEN",10],
-      "output3": ["METHYLENE",15],
-      "output4": ["AROMATICS",35]
+      "input": "EVEAIR",
+      "output1": ["KMnO4",40],
+      "output2": ["AMMONIA",10],
+      "output3": ["XENON",15],
+      "output4": ["MERCURY",35]
     },
     {
       "input": "DUNAAIR",
@@ -62,6 +27,41 @@
       "output2": ["OXYGEN",5],
       "output3": ["ARGON",10],
       "output4": ["NITROGEN",15]
+    },
+    {
+      "input": "SARNUSGAS",
+      "output1": ["HYDROGEN",45],
+      "output2": ["NITROGEN",5],
+      "output3": ["GAS",15],
+      "output4": ["HELIUM3",35]
+    },
+    {
+      "input": "AIR",
+      "output1": ["NITROGEN",60],
+      "output2": ["CARBONDIOXIDE",5],
+      "output3": ["KRYPTON",10],
+      "output4": ["OXYGEN",25]
+    },
+    {
+      "input": "TEKTOAIR",
+      "output1": ["CHLORINE",55],
+      "output2": ["PETROLEUM",5],
+      "output3": ["GAS",15],
+      "output4": ["AROMATICS",25]
+    },
+    {
+      "input": "JOOLGAS",
+      "output1": ["HELIUM3",40],
+      "output2": ["NEON",10],
+      "output3": ["CHLORINE",20],
+      "output4": ["HYDROGEN",30]
+    },
+    {
+      "input": "MORKINE",
+      "output1": ["UNSATURATEDS",40],
+      "output2": ["HYDROGEN",10],
+      "output3": ["METHYLENE",15],
+      "output4": ["AROMATICS",35]
     }
   ]
 }

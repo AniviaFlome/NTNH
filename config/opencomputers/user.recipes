@@ -18,3 +18,25 @@ include file("default.recipes")
 # default.recipes file to get an idea how recipes have to be structured. You'll
 # want to define your recipes after all includes, to avoid those overwriting
 # your recipes.
+
+lootDisks: [
+  {
+    name: "OpenComputers:openos"
+    type: shapeless
+    input: ["oc:floppy", "oc:manual"]
+  },
+  {
+    name: "OpenComputers:oppm"
+    type: shapeless
+    input: ["oc:floppy", "oc:materialInterweb"]
+  }
+]
+luaBios {
+  type: shapeless
+  input: ["oc:eeprom", "oc:manual"]
+}
+eeprom {
+  input: [["", "oc:materialTransistor", ""]
+          ["oc:circuitChip1", {item="hbm:item.circuit", subID=3}, "oc:circuitChip1"]
+          ["", "oc:materialTransistor", ""]]
+}
