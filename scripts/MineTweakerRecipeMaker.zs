@@ -105,7 +105,6 @@ recipes.remove(<appliedenergistics2:tile.BlockQuantumLinkChamber>);
 recipes.remove(<OpenComputers:item:96>);
 recipes.remove(<OpenComputers:item:109>);
 recipes.remove(<OpenComputers:hoverBoots>);
-recipes.remove(<OpenComputers:eeprom>);
 recipes.remove(<OpenComputers:item:110>);
 recipes.remove(<OpenComputers:item:67>);
 recipes.remove(<OpenComputers:item:77>);
@@ -383,7 +382,6 @@ recipes.addShaped(<OpenComputers:item:96> * 16, [[<minecraft:gravel>, <minecraft
 recipes.addShaped(<OpenComputers:item:4>, [[<ore:materialEnderPearl>], [<ore:oc:floppy>]]);
 recipes.addShaped(<OpenComputers:item:109>, [[<OpenComputers:item:24>], [<OpenComputers:diskDrive>], [<hbm:item.circuit:3>]]);
 recipes.addShaped(<OpenComputers:hoverBoots>, [[<minecraft:leather_boots>], [<ore:oc:capacitor>], [<ore:oc:droneCase1>]]);
-recipes.addShaped(<OpenComputers:eeprom>, [[null, <ore:oc:materialTransistor>, null], [<ore:oc:circuitChip1>, <hbm:item.circuit:3>, <ore:oc:circuitChip1>], [null, <OpenComputers:item:23>, null]]);
 recipes.addShaped(<OpenComputers:item:110>, [[<ore:oc:circuitChip2>], [<ore:gemEmerald>], [<hbm:item.circuit:3>]]);
 recipes.addShaped(<OpenComputers:item:67>, [[<ore:oc:circuitChip3>], [<ore:ingotIron>], [<hbm:item.circuit:3>]]);
 recipes.addShaped(<OpenComputers:item:77>, [[<ore:oc:circuitChip1>], [<minecraft:dispenser>], [<hbm:item.circuit:3>]]);

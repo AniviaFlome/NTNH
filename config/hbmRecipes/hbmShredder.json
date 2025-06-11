@@ -2058,6 +2058,10 @@
       "output": ["hbm:item.powder_steel"]
     },
     {
+      "input": ["hbm:tile.duna_cobble"],
+      "output": ["minecraft:gravel"]
+    },
+    {
       "input": ["hbm:tile.meteor_brick_mossy"],
       "output": ["hbm:item.powder_meteorite"]
     },

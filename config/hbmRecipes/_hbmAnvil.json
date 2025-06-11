@@ -821,7 +821,7 @@
     },
     {
       "inputs": [
-        ["item","minecraft:stone",8],
+        ["dict","stone",8],
         ["dict","plateSteel",2],
         ["dict","ingotIron",4]
       ],
