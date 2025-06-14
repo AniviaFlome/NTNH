@@ -2,10 +2,6 @@
   "comment": "Ingot/block/ore -> dust recipes are generated in post and can therefore not be changed with the config. Non-auto recipes do not use ore dict.",
   "recipes": [
     {
-      "input": ["minecraft:wheat"],
-      "output": ["appliedenergistics2:item.ItemMultiMaterial",1,4]
-    },
-    {
       "input": ["minecraft:ender_pearl"],
       "output": ["appliedenergistics2:item.ItemMultiMaterial",1,46]
     },
@@ -498,6 +494,10 @@
       "output": ["hbm:item.ore_enriched",1,1]
     },
     {
+      "input": ["hbm:item.crystal_zinc"],
+      "output": ["hbm:item.powder_zinc",3]
+    },
+    {
       "input": ["hbm:item.crystal_lead"],
       "output": ["hbm:item.powder_lead",3]
     },
@@ -706,6 +706,10 @@
       "output": ["hbm:item.ore_enriched",1,9]
     },
     {
+      "input": ["minecraft:wheat"],
+      "output": ["hbm:item.flour"]
+    },
+    {
       "input": ["hbm:tile.bobblehead",1,27],
       "output": ["hbm:item.scrap_plastic"]
     },
@@ -788,6 +792,10 @@
     {
       "input": ["ExtraTrees:log",1,38],
       "output": ["hbm:item.powder_sawdust",4]
+    },
+    {
+      "input": ["hbm:tile.bobblehead",1,28],
+      "output": ["hbm:item.scrap_plastic",1,10]
     },
     {
       "input": ["ExtraTrees:log",1,5],
