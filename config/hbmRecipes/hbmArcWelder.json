@@ -397,6 +397,14 @@
     },
     {
       "inputs": [
+        ["dict","plateTripleStainlessSteel",2]
+      ],
+      "output": ["hbm:item.plate_welded",1,24001],
+      "duration": 250,
+      "consumption": 20000
+    },
+    {
+      "inputs": [
         ["dict","plateTripleTcAlloy",2]
       ],
       "fluid": ["OXYGEN",1000],
@@ -745,6 +753,47 @@
       "output": ["hbm:tile.machine_xenon_thruster"],
       "duration": 200,
       "consumption": 50000
+    },
+    {
+      "inputs": [
+        ["dict","plateSextupleStainlessSteel"],
+        ["item","hbm:item.seg_20"],
+        ["dict","shellTitanium"]
+      ],
+      "output": ["hbm:item.rp_f_20_1"],
+      "duration": 120,
+      "consumption": 50000
+    },
+    {
+      "inputs": [
+        ["dict","plateSextupleStainlessSteel",2],
+        ["item","hbm:item.seg_20"],
+        ["item","hbm:item.rp_f_20_1"]
+      ],
+      "output": ["hbm:item.rp_f_20_3"],
+      "duration": 130,
+      "consumption": 52000
+    },
+    {
+      "inputs": [
+        ["dict","plateSextupleStainlessSteel",4],
+        ["item","hbm:item.seg_20"],
+        ["item","hbm:item.rp_f_20_3"]
+      ],
+      "output": ["hbm:item.rp_f_20_6"],
+      "duration": 140,
+      "consumption": 56000
+    },
+    {
+      "inputs": [
+        ["dict","plateSextupleStainlessSteel",8],
+        ["item","hbm:item.seg_20"],
+        ["dict","shellTitanium",6]
+      ],
+      "fluid": ["OXYGEN",500],
+      "output": ["hbm:item.rp_f_20_12"],
+      "duration": 150,
+      "consumption": 60000
     }
   ]
 }
