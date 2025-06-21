@@ -7,7 +7,6 @@ config/AppliedEnergistics2/recipes/items.csv
 updates.html
 minetweaker.log
 optionsnf.txt
-serverutilities
 logs
 fonts
 *.cache
@@ -26,3 +25,10 @@ backups
 screenshots
 config/hbmRecipes/_*
 config/hbmConfig/_*
+serverutilities/aurora.cfg
+serverutilities/client/notifications.json
+serverutilities/client/sidebar_buttons.json
+serverutilities/client/serverutilities.cfg
+serverutilities/server/ranks.txt
+serverutilities/server/players.txt
+serverutilities/server/stat_leaderboards.json
