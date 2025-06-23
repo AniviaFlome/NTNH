@@ -12,6 +12,8 @@
 
 // ================================================================================
 //#MARKER REMOVE
+recipes.remove(<MutantCreatures:item.chemicalX>);
+recipes.remove(<appliedenergistics2:item.ItemMultiMaterial:54>);
 mods.forestry.Carpenter.removeRecipe(<Forestry:flutterlyzer>);
 recipes.remove(<ProjRed|Expansion:projectred.expansion.machine2:11>);
 recipes.remove(<minecraft:flint_and_steel>);
@@ -304,6 +306,13 @@ mods.forestry.Carpenter.addRecipe(<Forestry:treealyzer>, [[<ore:ingotCopper>, <o
 
 // ================================================================================
 //#MARKER ADD SHAPELESS
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiPart:500>, [<appliedenergistics2:item.ItemMultiPart:340>, <appliedenergistics2:item.ItemMultiMaterial:24>]);
+recipes.addShapeless(<MutantCreatures:item.chemicalX>, [<minecraft:potion:16428>, <hbm:item.powder_magic>]);
+recipes.addShapeless(<ae2stuff:Wireless:17>, [<ae2stuff:Wireless>]);
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiMaterial:68>, [<appliedenergistics2:item.ItemMultiMaterial:25>, <hbm:item.black_hole>]);
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiMaterial:47>, [<hbm:item.singularity>]);
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiMaterial:54>, [<appliedenergistics2:item.ItemMultiMaterial:28>, <appliedenergistics2:item.ItemMultiMaterial:35>, <appliedenergistics2:item.ItemMultiMaterial:35>, <appliedenergistics2:tile.BlockInterface>]);
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiMaterial:54>, [<appliedenergistics2:item.ItemMultiMaterial:28>, <appliedenergistics2:item.ItemMultiMaterial:35>, <appliedenergistics2:item.ItemMultiMaterial:35>, <appliedenergistics2:item.ItemMultiPart:440>]);
 recipes.addShapeless(<hbm:tile.ore_uranium>, [<hbm:tile.ore_uranium_scorched>, <chisel:obsidianChisel>]);
 recipes.addShapeless(<hbm:tile.ore_uranium>, [<hbm:tile.ore_uranium_scorched>, <chisel:diamondChisel>]);
 recipes.addShapeless(<hbm:tile.ore_uranium>, [<hbm:tile.ore_uranium_scorched>, <chisel:chisel>]);
@@ -318,6 +327,8 @@ recipes.addShapeless(<adventurebackpack:backpackComponent:8>, [<adventurebackpac
 
 // ================================================================================
 //#MARKER ADD SHAPED
+recipes.addShaped(<appliedenergistics2:item.ItemMultiMaterial:44>, [[<hbm:item.circuit:3>, <ore:ingotIron>, <appliedenergistics2:item.ItemMultiMaterial:16>]]);
+recipes.addShaped(<appliedenergistics2:item.ItemMultiMaterial:43>, [[<appliedenergistics2:item.ItemMultiMaterial:18>, <ore:ingotIron>, <hbm:item.circuit:3>]]);
 recipes.addShaped(<ae2fc:part_fluid_export>, [[<ore:gemLapis>, <appliedenergistics2:item.ItemMultiMaterial:22>, <ore:gemLapis>], [<ore:ingotSteel>, <ore:craftingPiston>, <ore:ingotSteel>]]);
 recipes.addShaped(<ae2fc:part_fluid_import>, [[<ore:gemLapis>, <appliedenergistics2:item.ItemMultiMaterial:24>, <ore:gemLapis>], [<ore:ingotSteel>, <ore:craftingPiston>, <ore:ingotSteel>]]);
 recipes.addShaped(<openfm:MemoryCard>, [[<hbm:item.wire_fine:2900>], [<OpenComputers:item:4>]]);
