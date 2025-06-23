@@ -12,8 +12,6 @@
 
 // ================================================================================
 //#MARKER REMOVE
-recipes.remove(<malisisdoors:block_mixer>);
-recipes.remove(<malisisdoors:item.forcefieldItem>);
 mods.forestry.Carpenter.removeRecipe(<Forestry:flutterlyzer>);
 recipes.remove(<ProjRed|Expansion:projectred.expansion.machine2:11>);
 recipes.remove(<minecraft:flint_and_steel>);
@@ -232,8 +230,6 @@ recipes.remove(<appliedenergistics2:item.ItemAdvancedStorageCell.4096k>);
 recipes.remove(<appliedenergistics2:item.ItemAdvancedStorageCell.1024k>);
 recipes.remove(<appliedenergistics2:item.ItemAdvancedStorageCell.256k>);
 recipes.remove(<waystones:warpStone>);
-recipes.remove(<eplus:item.tableUpgrade>);
-recipes.remove(<eplus:tile.advancedEnchantmentTable>);
 recipes.remove(<GraviGun:GraviGun:1>);
 recipes.remove(<GraviGun:GraviGun>);
 recipes.remove(<appliedenergistics2:item.ItemMultiMaterial:43>);
@@ -445,7 +441,6 @@ recipes.addShaped(<OpenComputers:cable> * 16, [[null, <hbm:item.plate_polymer>, 
 recipes.addShaped(<OpenComputers:assembler>, [[<ore:Steel>, <hbm:tile.machine_autocrafter>, <ore:Steel>], [<hbm:item.part_generic:1>, <ore:oc:circuitChip2>, <hbm:item.part_generic:1>], [<ore:Steel>, <hbm:item.circuit:3>, <ore:Steel>]]);
 recipes.addShaped(<OpenComputers:adapter>, [[<ore:Steel>, <ore:oc:cable>, <ore:Steel>], [<ore:oc:cable>, <ore:oc:circuitChip1>, <ore:oc:cable>], [<ore:Steel>, <hbm:item.circuit:3>, <ore:Steel>]]);
 recipes.addShaped(<eplus:item.tableUpgrade>, [[<ore:Starmetal>, <minecraft:writable_book>, <ore:Starmetal>], [<ore:gemAmethyst>, null, <ore:gemAmethyst>], [<ore:Starmetal>, <minecraft:ender_eye>, <ore:Starmetal>]]);
-recipes.addShaped(<eplus:tile.advancedEnchantmentTable>, [[<ore:Starmetal>, <minecraft:writable_book>, <ore:Starmetal>], [<ore:gemAmethyst>, <minecraft:enchanting_table>, <ore:gemAmethyst>], [<ore:Starmetal>, <minecraft:ender_eye>, <ore:Starmetal>]]);
 recipes.addShaped(<waystones:warpStone>, [[<ore:Starmetal>, <ore:gemAmethyst>, <ore:Starmetal>], [<ore:gemAmethyst>, <etfuturum:chorus_fruit_popped>, <ore:gemAmethyst>], [<ore:Starmetal>, <ore:gemAmethyst>, <ore:Starmetal>]]);
 recipes.addShaped(<RandomThings:fertilizedDirt> * 5, [[<minecraft:dirt>, <hbm:item.powder_fertilizer>, <minecraft:dirt>], [<hbm:item.powder_fertilizer>, <minecraft:dirt>, <hbm:item.powder_fertilizer>], [<minecraft:dirt>, <hbm:item.powder_fertilizer>, <minecraft:dirt>]]);
 recipes.addShaped(<appliedenergistics2:item.ItemMultiPart:180> * 3, [[null, <ore:dustGlowstone>, <appliedenergistics2:tile.BlockQuartzGlass>], [<ore:ingotSteel>, <ore:dustRedstone>, <appliedenergistics2:tile.BlockQuartzGlass>], [null, <ore:dustGlowstone>, <appliedenergistics2:tile.BlockQuartzGlass>]]);
