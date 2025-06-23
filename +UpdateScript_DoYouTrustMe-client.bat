@@ -13,7 +13,7 @@ if exist current_version.txt (
     ) else (
         echo Updating script to version %LATEST_TAG%...
         :: Скачивание новой версии скрипта
-        powershell -command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/Nuclear-Tech-New-Horizons/NTNH/%LATEST_TAG%/+UpdateScript_DoYouTrustMe-client.bat -OutFile +UpdateScript_DoYouTrustMe-client.bat.new"
+        powershell -command "Start-BitsTransfer -Source 'https://raw.githubusercontent.com/Nuclear-Tech-New-Horizons/NTNH/%LATEST_TAG%/+UpdateScript_DoYouTrustMe-client.bat' -Destination '+UpdateScript_DoYouTrustMe-client.bat.new'"
         if exist +UpdateScript_DoYouTrustMe-client.bat.new (
             :: Замена текущего скрипта
             move /y +UpdateScript_DoYouTrustMe-client.bat.new +UpdateScript_DoYouTrustMe-client.bat
@@ -54,7 +54,7 @@ if exist "%ZIP_FILE%" (
     echo Using cached zip file...
 ) else (
     echo Downloading latest version...
-    powershell -command "Invoke-WebRequest -Uri https://github.com/Nuclear-Tech-New-Horizons/NTNH/archive/refs/tags/%LATEST_TAG%.zip -OutFile '%ZIP_FILE%'"
+    powershell -command "Start-BitsTransfer -Source 'https://github.com/Nuclear-Tech-New-Horizons/NTNH/archive/refs/tags/%LATEST_TAG%.zip' -Destination '%ZIP_FILE%'"
 )
 
 :: Удаление существующих файлов и папок
@@ -71,22 +71,23 @@ del LICENSE
 :: Распаковка zip-архива
 echo Extracting files...
 mkdir temp_extract
-powershell -command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath temp_extract"
+:: Используйте 7z, если он установлен, или оставьте Expand-Archive
+7z x "%ZIP_FILE%" -o"temp_extract" || powershell -command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath temp_extract"
 
 :: Поиск распакованной папки
 for /d %%i in (temp_extract\NTNH-*) do set EXTRACTED_FOLDER=%%i
 
 :: Перемещение файлов
 echo Moving new files...
-move "%EXTRACTED_FOLDER%\config" "."
-move "%EXTRACTED_FOLDER%\mods" "."
-move "%EXTRACTED_FOLDER%\scripts" "."
-move "%EXTRACTED_FOLDER%\serverutilities" "."
-move "%EXTRACTED_FOLDER%\CODEOWNERS" "."
-move "%EXTRACTED_FOLDER%\icon.png" "."
-move "%EXTRACTED_FOLDER%\LICENSE" "."
-move "%EXTRACTED_FOLDER%\MODLIST.txt" "."
-move "%EXTRACTED_FOLDER%\README.md" "."
+robocopy "%EXTRACTED_FOLDER%\config" "config" /mov /e
+robocopy "%EXTRACTED_FOLDER%\mods" "mods" /mov /e
+robocopy "%EXTRACTED_FOLDER%\scripts" "scripts" /mov /e
+robocopy "%EXTRACTED_FOLDER%\serverutilities" "serverutilities" /mov /e
+robocopy "%EXTRACTED_FOLDER%" "." CODEOWNERS /mov
+robocopy "%EXTRACTED_FOLDER%" "." icon.png /mov
+robocopy "%EXTRACTED_FOLDER%" "." LICENSE /mov
+robocopy "%EXTRACTED_FOLDER%" "." MODLIST.txt /mov
+robocopy "%EXTRACTED_FOLDER%" "." README.md /mov
 
 :: Очистка временных файлов
 echo Cleaning up...
