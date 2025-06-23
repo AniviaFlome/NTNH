@@ -49,7 +49,7 @@
           "id:8": "hbm:tile.machine_compressor"
         }
       },
-      "taskID:8": "bq_standard:optional_retrieval"
+      "taskID:8": "bq_standard:retrieval"
     }
   }
 }
