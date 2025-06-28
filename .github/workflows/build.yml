@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-Prism-Modpack
-          path: modpack/NTNH-Prism-Modpack.zip
+          path: modpack
 
       - name: Upload GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
