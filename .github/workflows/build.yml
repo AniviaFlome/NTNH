@@ -60,17 +60,11 @@ jobs:
           cp -r lwjgl3ify-multimc/libraries modpack/
           cp -r lwjgl3ify-multimc/mmc-pack.json modpack/
 
-      - name: Zip modpack contents
-        run: |
-          set -e
-          cd modpack
-          zip -r ../NTNH-Prism-Modpack.zip .
-      
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-Prism-Modpack
-          path: NTNH-Prism-Modpack.zip
+          path: modpack/NTNH-Prism-Modpack.zip
 
       - name: Upload GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
