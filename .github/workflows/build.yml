@@ -64,9 +64,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-Prism-Modpack
-          path: |
-            modpack
-            modpack/.minecraft
+          path: modpack
+          include-hidden-files: true
 
       - name: Upload GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
