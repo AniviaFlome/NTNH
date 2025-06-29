@@ -1,0 +1,74 @@
+name: Package NTNH as Prism Launcher Modpack
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone NTNH Repository
+        run: |
+          set -e
+          git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Download Latest lwjgl3ify
+        run: |
+          set -e
+          release_json=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest)
+
+          asset_url=$(echo "$release_json" | jq -r '.assets[]
+            | select(.name | test("multimc"; "i"))
+            | select(.name | endswith(".zip"))
+            | .browser_download_url')
+
+          asset_name=$(echo "$release_json" | jq -r '.assets[]
+            | select(.name | test("multimc"; "i"))
+            | select(.name | endswith(".zip"))
+            | .name')
+
+          if [ -z "$asset_url" ]; then
+            echo "No matching asset found!"
+            exit 1
+          fi
+
+          echo "Downloading asset: $asset_name from $asset_url"
+          curl -L "$asset_url" -o "$asset_name"
+          unzip -q "$asset_name" -d lwjgl3ify-multimc
+
+      - name: Copy Contents
+        run: |
+          set -e
+          mkdir -p modpack/.minecraft
+          cp -r NTNH/* modpack/.minecraft/
+
+          cat > modpack/instance.cfg <<< "
+          [General]
+          name=NTNH
+          iconKey=default
+          InstanceType=OneSix
+          "
+
+          cp -r lwjgl3ify-multimc/patches modpack/
+          cp -r lwjgl3ify-multimc/libraries modpack/
+          cp -r lwjgl3ify-multimc/mmc-pack.json modpack/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-Prism-Modpack
+          path: modpack
+          include-hidden-files: true
+
+      - name: Upload GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: NTNH-Prism-Modpack.zip
