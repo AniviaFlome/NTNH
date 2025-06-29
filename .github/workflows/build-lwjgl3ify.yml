@@ -26,7 +26,6 @@ jobs:
           zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}-multimc.zip"
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}.jar"
 
-          echo "Downloading: $zip_url"
           curl -L "$zip_url" -o lwjgl3ify-${version}-multimc.zip
           unzip -q lwjgl3ify-${version}-multimc.zip -d lwjgl3ify-multimc
           curl -L "$jar_url" -o lwjgl3ify-${version}.jar
@@ -34,6 +33,8 @@ jobs:
       - name: Copy Contents
         run: |
           set -e
+          version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
+
           mkdir -p modpack/.minecraft
           cp -r NTNH/* modpack/.minecraft/
 
