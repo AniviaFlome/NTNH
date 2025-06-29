@@ -34,3 +34,6 @@ serverutilities/server/players.txt
 serverutilities/server/stat_leaderboards.json
 resourcepacks
 server-resource-packs
+config/signpic.cfg
+config/betterquesting.7z
+signpic
