@@ -1,0 +1,37 @@
+name: Build NTNH Prism Package
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone NTNH Repository
+        run: |
+          set -e
+          git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+
+      - name: Copy Contents
+        run: |
+          set -e
+          mkdir -p modpack/.minecraft
+          cp -r NTNH/* modpack/.minecraft/
+
+          cat > modpack/instance.cfg <<< "
+            [General]
+            name=NTNH
+            iconKey=default
+            InstanceType=OneSix
+          "
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-Prism
+          path: modpack
+          include-hidden-files: true
