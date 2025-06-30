@@ -8,6 +8,7 @@ if [ ! -d "NTNH" ]; then
     git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
 else
     echo "NTNH directory already exists."
+fi
 
 echo "Downloading lwjgl3ify"
 version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)

@@ -5,6 +5,7 @@ if [ ! -d "NTNH" ]; then
     git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
 else
     echo "NTNH directory already exists."
+fi
 
 echo "Copying contents to modpack-prism"
 mkdir -p modpack-prism/.minecraft
