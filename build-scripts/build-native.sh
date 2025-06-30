@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 if [ ! -d "NTNH" ]; then
     echo "Cloning NTNH Repository"
@@ -12,4 +11,3 @@ mkdir -p modpack-native
 cp -r NTNH/* modpack-native
 
 echo "Native Build Complete"
-exit

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 if [ ! -d "NTNH" ]; then
     echo "Cloning NTNH Repository"
@@ -19,4 +18,3 @@ InstanceType=OneSix
 "
 
 echo "Prism Build Complete"
-exit
