@@ -4,8 +4,11 @@ set -e
 echo "Installing jq"
 sudo sudo apt install -y jq
 
-echo "Cloning NTNH Repository"
-git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+if [ ! -d "NTNH" ]; then
+    echo "Cloning NTNH Repository"
+    git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+else
+    echo "NTNH directory already exists."
 
 echo "Downloading lwjgl3ify"
 version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
@@ -17,7 +20,6 @@ unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
 curl -L "$jar_url" -o "lwjgl3ify-${version}.jar"
 
 echo "Copying contents to modpack-lwjgl3ify"
-mkdir -p modpack-lwjgl3ify/.minecraft/mods/
 cp -r NTNH/* modpack-lwjgl3ify/.minecraft/
 
 cat > modpack-lwjgl3ify/instance.cfg <<< "

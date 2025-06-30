@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Cloning NTNH Repository"
-git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+if [ ! -d "NTNH" ]; then
+    echo "Cloning NTNH Repository"
+    git clone --depth=1 https://github.com/Nuclear-Tech-New-Horizons/NTNH.git
+else
+    echo "NTNH directory already exists."
 
 echo "Copying contents to modpack-native"
 mkdir -p modpack-native
