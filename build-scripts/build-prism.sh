@@ -19,3 +19,4 @@ InstanceType=OneSix
 "
 
 echo "Prism Build Complete"
+exit

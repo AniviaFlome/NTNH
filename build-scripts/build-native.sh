@@ -12,3 +12,4 @@ mkdir -p modpack-native
 cp -r NTNH/* modpack-native
 
 echo "Native Build Complete"
+exit

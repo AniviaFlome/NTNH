@@ -35,3 +35,4 @@ cp -r lwjgl3ify-multimc/mmc-pack.json modpack-lwjgl3ify/
 cp -r "lwjgl3ify-${version}.jar" modpack-lwjgl3ify/.minecraft/mods/
 
 echo "lwjgl3ify Build Complete"
+exit
