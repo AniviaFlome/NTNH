@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Native Script
         run: |
-          chmod +x ./scripts/build-native.sh
+          chmod +x ./build-scripts/build-native.sh
           ./build-scripts/build-native.sh
 
       - name: Zip Files
