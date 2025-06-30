@@ -34,7 +34,7 @@ jobs:
       - name: Run lwjgl3ify Script
         if: github.event.inputs.lwjgl3ify == 'true'
         run: |
-          chmod +x ./build-scripts/build-prism.sh
+          chmod +x ./build-scripts/build-lwjgl3ify.sh
           ./build-scripts/build-lwjgl3ify.sh
 
       - name: Run Prism Script
@@ -46,7 +46,7 @@ jobs:
       - name: Run Native Script
         if: github.event.inputs.native == 'true'
         run: |
-          chmod +x ./build-scripts/build-prism.sh
+          chmod +x ./build-scripts/build-native.sh
           ./build-scripts/build-native.sh
 
       - name: Upload lwjgl3ify Artifact
