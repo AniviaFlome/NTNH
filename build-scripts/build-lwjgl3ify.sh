@@ -20,6 +20,7 @@ unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
 curl -L "$jar_url" -o "lwjgl3ify-${version}.jar"
 
 echo "Copying contents to modpack-lwjgl3ify"
+mkdir -p modpack-lwjgl3ify/.minecraft/mods
 cp -r NTNH/* modpack-lwjgl3ify/.minecraft/
 
 cat > modpack-lwjgl3ify/instance.cfg <<< "
