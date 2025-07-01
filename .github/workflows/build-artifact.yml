@@ -1,0 +1,74 @@
+name: Build NTNH Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      lwjgl3ify:
+        description: 'Do you want to build lwjfl3ify package?'
+        required: true
+        type: boolean
+        default: true
+      prism:
+        description: 'Do you want to build prism package?'
+        required: true
+        type: boolean
+        default: true
+      native:
+        description: 'Do you want to build native package?'
+        required: true
+        type: boolean
+        default: true
+      release_version:
+        description: 'Release Version'
+        required: true
+        type: string
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run lwjgl3ify Script
+        if: github.event.inputs.lwjgl3ify == 'true'
+        run: |
+          chmod +x ./build-scripts/build-lwjgl3ify.sh
+          ./build-scripts/build-lwjgl3ify.sh
+
+      - name: Run Prism Script
+        if: github.event.inputs.prism == 'true'
+        run: |
+          chmod +x ./build-scripts/build-prism.sh
+          ./build-scripts/build-prism.sh
+
+      - name: Run Native Script
+        if: github.event.inputs.native == 'true'
+        run: |
+          chmod +x ./build-scripts/build-native.sh
+          ./build-scripts/build-native.sh
+
+      - name: Upload lwjgl3ify Artifact
+        if: github.event.inputs.lwjgl3ify == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify
+          path: modpack-lwjgl3ify
+          include-hidden-files: true
+
+      - name: Upload Prism Artifact
+        if: github.event.inputs.prism == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-${{ github.event.inputs.release_version }}-MMC_Prism
+          path: modpack-prism
+          include-hidden-files: true
+
+      - name: Upload Native Artifact
+        if: github.event.inputs.native == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-${{ github.event.inputs.release_version }}-Native
+          path: modpack-native
+          include-hidden-files: true
