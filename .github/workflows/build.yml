@@ -40,7 +40,7 @@ on:
 env:
   instance.cfg: |
     [General]
-    name=NTNH-${{ github.event.inputs.release_version }
+    name=NTNH-${{ github.event.inputs.release_version }}
     iconKey=default
     InstanceType=OneSix
   mmc-pack.json: |
