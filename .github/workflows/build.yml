@@ -84,10 +84,8 @@ jobs:
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
 
-          touch modpack-prism/instance.cfg
-          touch modpack-prism/mmc-pack.json
-          cat > modpack-prism/instance.cfg <<< "${{ github.event.inputs.instance.cfg }}"
-          cat > modpack-prism/mmc-pack.json <<< "${{ github.event.inputs.mmc-pack.json }}"
+          cat > modpack-lwjgl3ifyinstance.cfg <<< "${{ github.event.inputs.instance.cfg }}"
+          cat > modpack-lwjgl3ify/mmc-pack.json <<< "${{ github.event.inputs.mmc-pack.json }}"
 
           cp -r lwjgl3ify-multimc/patches modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/libraries modpack-lwjgl3ify/
@@ -100,8 +98,6 @@ jobs:
           mkdir -p modpack-prism/.minecraft
           cp -r ntnh/* modpack-prism/.minecraft/
 
-          touch modpack-prism/instance.cfg
-          touch modpack-prism/mmc-pack.json
           cat > modpack-prism/instance.cfg <<< "${{ github.event.inputs.instance.cfg }}"
           cat > modpack-prism/mmc-pack.json <<< "${{ github.event.inputs.mmc-pack.json }}"
 
