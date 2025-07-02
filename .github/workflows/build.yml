@@ -94,8 +94,7 @@ jobs:
           cp -r NTNH/* modpack-native
 
       - name: Upload lwjgl3ify Artifact
-        if: github.event.inputs.lwjgl3ify == 'true'
-        if: github.event.inputs.output == 'artifact'
+        if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify
@@ -103,8 +102,7 @@ jobs:
           include-hidden-files: true
 
       - name: Upload Prism Artifact
-        if: github.event.inputs.prism == 'true'
-        if: github.event.inputs.output == 'artifact'
+        if: github.event.inputs.prism == 'true' && github.event.inputs.output == 'artifact'
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-MMC_Prism
@@ -112,8 +110,7 @@ jobs:
           include-hidden-files: true
 
       - name: Upload Native Artifact
-        if: github.event.inputs.native == 'true'
-        if: github.event.inputs.output == 'artifact'
+        if: github.event.inputs.native == 'true' && github.event.inputs.output == 'artifact'
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Native
@@ -129,8 +126,7 @@ jobs:
           zip -r "NTNH-${{ github.event.inputs.release_version }}-Native.zip" ntnh/modpack-native/
 
       - name: Create GitHub Release
-        if: github.ref_type == 'tag'
-        if: github.event.inputs.output == 'release'
+        if: github.ref_type == 'tag' && github.event.inputs.output == 'release'
         uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.event.inputs.release_version }}
