@@ -60,7 +60,7 @@ jobs:
           curl -L "$jar_url" -o "lwjgl3ify-${version}.jar"
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
-          cp -r NTNH/* modpack-lwjgl3ify/.minecraft/
+          cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
 
           cat > modpack-lwjgl3ify/instance.cfg <<< "
             [General]
@@ -78,7 +78,7 @@ jobs:
         if: github.event.inputs.prism == 'true'
         run: |
           mkdir -p modpack-prism/.minecraft
-          cp -r NTNH/* modpack-prism/.minecraft/
+          cp -r ntnh/* modpack-prism/.minecraft/
 
           cat > modpack-prism/instance.cfg <<< "
             [General]
@@ -91,7 +91,7 @@ jobs:
         if: github.event.inputs.native == 'true'
         run: |
           mkdir -p modpack-native
-          cp -r NTNH/* modpack-native
+          cp -r ntnh/* modpack-native
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
