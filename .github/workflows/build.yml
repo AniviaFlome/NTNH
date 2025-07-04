@@ -109,7 +109,6 @@ jobs:
 
           cp -r lwjgl3ify-multimc/patches modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/libraries modpack-lwjgl3ify/
-          cp -r lwjgl3ify-multimc/mmc-pack.json modpack-lwjgl3ify/
           cp -r lwjgl3ify-${version}.jar modpack-lwjgl3ify/.minecraft/mods/
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
