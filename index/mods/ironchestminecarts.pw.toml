@@ -1,0 +1,15 @@
+name = "IronChestMinecarts"
+filename = "IronChestMinecarts-1.2.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/IronChestMinecarts/releases/download/1.2.0/IronChestMinecarts-1.2.0.jar"
+hash-format = "sha256"
+hash = "e165a1755609804ed7b4c4bf991caea4f3ef05d7c5516fe79f8a046bba8aeb75"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/IronChestMinecarts"
+tag = "1.2.0"

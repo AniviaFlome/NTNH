@@ -1,0 +1,13 @@
+name = "Simple World Timer"
+filename = "SimpleWorldTimer-1.7.10-1.1.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b92154aeffc46609439f2c291dfc72e70c58a3eb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2859158
+project-id = 349565

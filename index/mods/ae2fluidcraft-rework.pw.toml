@@ -1,0 +1,15 @@
+name = "AE2FluidCraft-Rework"
+filename = "ae2fc-1.4.98-gtnh.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/AE2FluidCraft-Rework/releases/download/1.4.98-gtnh/ae2fc-1.4.98-gtnh.jar"
+hash-format = "sha256"
+hash = "f06e90d51d0ff50a060dc3c38b9588f93b76b3f2f5007d67fa31b116923ccf55"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/AE2FluidCraft-Rework"
+tag = "1.4.98-gtnh"

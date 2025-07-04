@@ -1,0 +1,15 @@
+name = "Baubles"
+filename = "Baubles-1.0.4.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Baubles/releases/download/1.0.4/Baubles-1.0.4.jar"
+hash-format = "sha256"
+hash = "79770536a4fb344339cbae331d12bf46d1ec20914f857cdaed27d4133e862f11"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Baubles"
+tag = "1.0.4"

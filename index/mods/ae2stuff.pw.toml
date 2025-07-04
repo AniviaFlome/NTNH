@@ -1,0 +1,15 @@
+name = "ae2stuff"
+filename = "ae2stuff-0.9.6-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/ae2stuff/releases/download/0.9.6-GTNH/ae2stuff-0.9.6-GTNH.jar"
+hash-format = "sha256"
+hash = "96f7a8ef00c55240bc162fcea5b3b90aed5731916553ce21a88d752e5381b1b6"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/ae2stuff"
+tag = "0.9.6-GTNH"

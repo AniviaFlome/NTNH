@@ -1,0 +1,13 @@
+name = "Mobs Info"
+filename = "mobsinfo-0.4.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d0179d4bdbe24e0283f8b6d9bb377bf9a1fd5d35"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6268886
+project-id = 879914

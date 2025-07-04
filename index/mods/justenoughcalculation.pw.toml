@@ -1,0 +1,15 @@
+name = "JustEnoughCalculation"
+filename = "JustEnoughCalculation-1.7.10-4.9.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/JustEnoughCalculation/releases/download/1.7.10-4.9/JustEnoughCalculation-1.7.10-4.9.jar"
+hash-format = "sha256"
+hash = "e98b1312112e4bf0bd90e379b5ad2456cb9f40899070d9a7958eea0b5e7b4a2a"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/JustEnoughCalculation"
+tag = "1.7.10-4.9"

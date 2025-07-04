@@ -1,0 +1,15 @@
+name = "TinkersConstruct"
+filename = "TConstruct-1.13.40-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/TinkersConstruct/releases/download/1.13.40-GTNH/TConstruct-1.13.40-GTNH.jar"
+hash-format = "sha256"
+hash = "7b8e7d289bc0b7247faf1836890dc9740ac89d0b66ab00ef1d3caf38d75f49c2"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/TinkersConstruct"
+tag = "1.13.40-GTNH"

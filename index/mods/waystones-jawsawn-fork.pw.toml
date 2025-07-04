@@ -1,0 +1,13 @@
+name = "Waystones Jawsawn Fork"
+filename = "Waystones_Jawsawn_Fork-mc1.7.10-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "40c430370164f6973962740c24797ebc8874ccd1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3043421
+project-id = 404877

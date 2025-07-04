@@ -1,0 +1,15 @@
+name = "Random-Things"
+filename = "RandomThings-2.6.5.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Random-Things/releases/download/2.6.5/RandomThings-2.6.5.jar"
+hash-format = "sha256"
+hash = "96a119758446994a8c591adc4b34e759998ea285924870038261ae9e7a7bfc90"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Random-Things"
+tag = "2.6.5"

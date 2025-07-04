@@ -1,0 +1,15 @@
+name = "ArchitectureCraft"
+filename = "ArchitectureCraft-1.11.2.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/ArchitectureCraft/releases/download/1.11.2/ArchitectureCraft-1.11.2.jar"
+hash-format = "sha256"
+hash = "2dc85de7fcfaffea37ef31a6efd953398b425c62052103c31d194a2913f5ad21"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/ArchitectureCraft"
+tag = "1.11.2"

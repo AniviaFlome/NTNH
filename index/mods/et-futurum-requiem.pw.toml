@@ -1,0 +1,15 @@
+name = "Et-Futurum-Requiem"
+filename = "etfuturum-2.6.2.18-GTNH-daily.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Et-Futurum-Requiem/releases/download/2.6.2.18-GTNH-daily/etfuturum-2.6.2.18-GTNH-daily.jar"
+hash-format = "sha256"
+hash = "ccc5e9f404da95d952c49513d512f15530136f3432bc049dcea60e6b72d68704"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Et-Futurum-Requiem"
+tag = "2.6.2.18-GTNH-daily"

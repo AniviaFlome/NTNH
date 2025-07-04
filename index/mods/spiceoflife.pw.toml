@@ -1,0 +1,15 @@
+name = "SpiceOfLife"
+filename = "SpiceOfLife-2.2.1-carrot.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/SpiceOfLife/releases/download/2.2.1-carrot/SpiceOfLife-2.2.1-carrot.jar"
+hash-format = "sha256"
+hash = "9141e0f0e67244efca5afda5a6f3d4c4fde4bf4415e697ae321e259e79102a7b"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/SpiceOfLife"
+tag = "2.2.1-carrot"

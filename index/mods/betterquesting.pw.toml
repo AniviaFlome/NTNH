@@ -1,0 +1,15 @@
+name = "BetterQuesting"
+filename = "BetterQuesting-3.7.6-GTNH-pre.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/BetterQuesting/releases/download/3.7.6-GTNH-pre/BetterQuesting-3.7.6-GTNH-pre.jar"
+hash-format = "sha256"
+hash = "37b5b99ee3f1c7e840755b00347ad2560f8b7380235028a8bfa354ed369e8fe0"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/WDMla"
+tag = "3.7.6-GTNH-pre"

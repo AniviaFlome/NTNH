@@ -1,0 +1,15 @@
+name = "Minecraft-Backpack-Mod"
+filename = "backpack-2.5.4-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Minecraft-Backpack-Mod/releases/download/2.5.4-GTNH/backpack-2.5.4-GTNH.jar"
+hash-format = "sha256"
+hash = "f3c2a040e7111ff20bd4fa29e65886dcca2b7d3f86a2c447c3f0e024612c73e1"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Minecraft-Backpack-Mod"
+tag = "2.5.4-GTNH"

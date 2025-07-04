@@ -1,0 +1,15 @@
+name = "BeeBetterAtBees-GTNH"
+filename = "beebetteratbees-0.4.2-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/BeeBetterAtBees-GTNH/releases/download/0.4.2-GTNH/beebetteratbees-0.4.2-GTNH.jar"
+hash-format = "sha256"
+hash = "f53a85b27135e46d62119ce39404194b648dc081de749c92756f1a189b402b8d"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/BeeBetterAtBees-GTNH"
+tag = "0.4.2-GTNH"

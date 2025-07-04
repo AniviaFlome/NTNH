@@ -1,0 +1,13 @@
+name = "Admin Commands Toolbox"
+filename = "AdminCommandsToolbox-0.0.2a_1.7.10.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2ce673e6da4d197be49f3a7e5ebf952021a90e65"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 2212871
+project-id = 221584

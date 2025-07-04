@@ -1,0 +1,15 @@
+name = "BetterCrashes"
+filename = "bettercrashes-1.4.0-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/BetterCrashes/releases/download/1.4.0-GTNH/bettercrashes-1.4.0-GTNH.jar"
+hash-format = "sha256"
+hash = "8f2edf1d9616af82fb00a5d8c50a145aab203141bddb1e8aeb8ceb0a2eabd33a"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/BetterCrashes"
+tag = "1.4.0-GTNH"

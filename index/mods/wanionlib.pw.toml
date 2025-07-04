@@ -1,0 +1,15 @@
+name = "WanionLib"
+filename = "WanionLib-1.10.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/WanionLib/releases/download/1.10.0/WanionLib-1.10.0.jar"
+hash-format = "sha256"
+hash = "ac5bef9786a932ce795ffe5fa93b42fbece02fa921c8a9270dda9fc0a8fc9044"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/WanionLib"
+tag = "1.10.0"

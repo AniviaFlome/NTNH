@@ -1,0 +1,15 @@
+name = "Darkerer"
+filename = "darkerer-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Darkerer/releases/download/1.0.5/darkerer-1.0.5.jar"
+hash-format = "sha256"
+hash = "31d0b16f72e59019adadbabc6207044fe28d9386c053eb02b146898e04539087"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Darkerer"
+tag = "1.0.5"

@@ -1,0 +1,13 @@
+name = "Greg Tech Chisel"
+filename = "chisel-2.16.2-GTNH.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "62013bb7cb3d94cef3afb7f7081a238187e7e897"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6389583
+project-id = 1236426

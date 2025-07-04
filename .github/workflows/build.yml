@@ -10,6 +10,13 @@ on:
         options:
           - "main"
           - "twopointzero"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          - "packwiz"
+=======
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
       output:
         type: choice
         required: true
@@ -37,6 +44,11 @@ on:
         required: true
         type: string
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 8d745e7 (changes)
 env:
   instance.cfg: |
     [General]
@@ -59,47 +71,155 @@ env:
         "formatVersion": 1
     }
 
+<<<<<<< HEAD
+=======
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
 jobs:
   package:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
       - name: Checkout Repository
         uses: actions/checkout@v4
+=======
+<<<<<<< HEAD
+      - uses: actions/checkout@v4
+=======
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
         with:
           path: ntnh
           ref: ${{ github.event.inputs.branch }}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          java-package: "jre"
+
+=======
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
       - name: Run lwjgl3ify Script
         if: github.event.inputs.lwjgl3ify == 'true'
         run: |
           version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version-multimc.zip"
+          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version.jar"
+          pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
+          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
+
+          curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
+          unzip -q "lwjgl3ify-$version-multimc.zip" -d lwjgl3ify-multimc
+=======
+>>>>>>> 8d745e7 (changes)
           zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}-multimc.zip"
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
           unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
+<<<<<<< HEAD
+=======
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
           curl -L "$jar_url" -o "lwjgl3ify-${version}.jar"
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
 
+<<<<<<< HEAD
           cat > modpack-lwjgl3ifyinstance.cfg <<< "${{ github.event.inputs.instance.cfg }}"
           cat > modpack-lwjgl3ify/mmc-pack.json <<< "${{ github.event.inputs.mmc-pack.json }}"
+=======
+<<<<<<< HEAD
+          printf "
+          [General]
+          name=NTNH-${{ github.event.inputs.release_version }}
+          iconKey=default
+          InstanceType=OneSix
+          " > modpack-lwjgl3ify/instance.cfg
+=======
+          echo "${{ github.event.inputs.instance_cfg }}" > modpack-lwjgl3ify/instance.cfg
+          echo "${{ github.event.inputs.mmc_pack_json }}" > modpack-lwjgl3ify/mmc-pack.json
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
 
           cp -r lwjgl3ify-multimc/patches modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/libraries modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/mmc-pack.json modpack-lwjgl3ify/
+<<<<<<< HEAD
           cp -r "lwjgl3ify-${version}.jar" modpack-lwjgl3ify/.minecraft/mods/
 
+=======
+          cp -r lwjgl3ify-${version}.jar modpack-lwjgl3ify/.minecraft/mods/
+
+<<<<<<< HEAD
+          curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
+          java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          cp -r index/mods modpack-lwjgl3ify/.minecraft
+
+      - name: Run Prism Script
+        if: github.event.inputs.prism == 'true'
+        run: |
+          pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
+          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
+
+          mkdir -p modpack-prism/.minecraft
+          cp -r ntnh/* modpack-prism/.minecraft/
+
+          printf "
+          [General]
+          name=NTNH-${{ github.event.inputs.release_version }}
+          iconKey=default
+          InstanceType=OneSix
+          " > modpack-prism/instance.cfg
+
+          printf '
+          {
+          "components": [
+              {
+              "important": true,
+              "uid": "net.minecraft",
+              "version": "1.7.10"
+              },
+              {
+              "uid": "net.minecraftforge",
+              "version": "10.13.4.1614"
+              }
+          ],
+          "formatVersion": 1
+          }
+          ' > modpack-prism/mmc-pack.json
+
+          curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
+          java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
+          cp -r index/mods modpack-prism/.minecraft
+=======
+>>>>>>> 8d745e7 (changes)
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
         run: |
           mkdir -p modpack-prism/.minecraft
           cp -r ntnh/* modpack-prism/.minecraft/
 
+<<<<<<< HEAD
           cat > modpack-prism/instance.cfg <<< "${{ github.event.inputs.instance.cfg }}"
           cat > modpack-prism/mmc-pack.json <<< "${{ github.event.inputs.mmc-pack.json }}"
+=======
+          echo "${{ github.event.inputs.instance_cfg }}" > modpack-prism/instance.cfg
+          echo "${{ github.event.inputs.mmc_pack_json }}" > modpack-prism/mmc-pack.json
+>>>>>>> a1dcb39 (changes)
+>>>>>>> 8d745e7 (changes)
 
       - name: Run Native Script
         if: github.event.inputs.native == 'true'

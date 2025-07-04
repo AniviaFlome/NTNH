@@ -1,0 +1,15 @@
+name = "WDMla"
+filename = "wdmla-2.7.3.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/WDMla/releases/download/2.7.3/wdmla-2.7.3.jar"
+hash-format = "sha256"
+hash = "46437dae10bc2547a166d3fe587c8438e80c4d1ebfa533f0c08a7a09d06ebb66"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/WDMla"
+tag = "2.7.3"

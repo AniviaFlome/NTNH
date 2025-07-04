@@ -1,0 +1,15 @@
+name = "BetterBuildersWands"
+filename = "BetterBuildersWands-0.13.3-GTNH.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/BetterBuildersWands/releases/download/0.13.3-GTNH/BetterBuildersWands-0.13.3-GTNH.jar"
+hash-format = "sha256"
+hash = "6d4108d84e53ca8c37bb9460a0010bbbdbf4bad9ccddc321334f5faefac304d3"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/BetterBuildersWands"
+tag = "0.13.3-GTNH"

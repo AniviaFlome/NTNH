@@ -1,0 +1,15 @@
+name = "Applied-Energistics-2-Unofficial"
+filename = "appliedenergistics2-rv3-beta-654-GTNH-pre.jar"
+side = "both"
+
+[download]
+url = "https://github.com/GTNewHorizons/Applied-Energistics-2-Unofficial/releases/download/rv3-beta-654-GTNH-pre/appliedenergistics2-rv3-beta-654-GTNH-pre.jar"
+hash-format = "sha256"
+hash = "a767c07a0ff0a2ada6480fc9666cee53f0232ac58c68804ba2f564467fbba511"
+
+[update]
+[update.github]
+branch = "master"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "GTNewHorizons/Applied-Energistics-2-Unofficial"
+tag = "rv3-beta-654-GTNH-pre"

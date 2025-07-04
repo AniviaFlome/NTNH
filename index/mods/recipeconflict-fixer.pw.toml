@@ -1,0 +1,13 @@
+name = "RecipeConflict Fixer"
+filename = "NoMoreRecipeConflict-1.7.10-0.3.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8fb6e3f19d2bc40d170e5b662e5349d6d396a649"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3479729
+project-id = 533411
