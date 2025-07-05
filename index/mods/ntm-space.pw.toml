@@ -1,0 +1,13 @@
+name = "NTM: Space"
+filename = "HBM-NTM-.1.0.27_X5251_H261.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d051e6e317873ee225b9f9a4bfe780067358b41b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6229180
+project-id = 1121235
