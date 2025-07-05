@@ -39,28 +39,6 @@ on:
         required: true
         type: string
 
-env:
-  instance.cfg: |
-    [General]
-    name=NTNH-${{ github.event.inputs.release_version }}
-    iconKey=default
-    InstanceType=OneSix
-  mmc-pack.json: |
-    {
-        "components": [
-            {
-                "important": true,
-                "uid": "net.minecraft",
-                "version": "1.7.10"
-            },
-            {
-                "uid": "net.minecraftforge",
-                "version": "10.13.4.1614"
-            }
-        ],
-        "formatVersion": 1
-    }
-
 jobs:
   package:
     runs-on: ubuntu-latest
@@ -87,11 +65,6 @@ jobs:
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version.jar"
           pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
-
-          curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
-          unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
-          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}-multimc.zip"
-          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
           unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
