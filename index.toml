@@ -4643,6 +4643,11 @@ hash = "cf45b93cf0331778cee9f756a9be6f9517282055b8f04b723e5851a461dde5f8"
 metafile = true
 
 [[files]]
+file = "index/mods/hbm-s-nuclear-tech-git.pw.toml"
+hash = "a963308c091af3bf2cd05540f190f724f801bad351d7d09911636c1e3fdce18e"
+metafile = true
+
+[[files]]
 file = "index/mods/helpfixer.pw.toml"
 hash = "4838e764d371b0cad5fc734c95ec0ff596c8a195dc337e167ca7e8092f25dc54"
 metafile = true
@@ -4785,11 +4790,6 @@ metafile = true
 [[files]]
 file = "index/mods/notenoughresources.pw.toml"
 hash = "d59e5fdbfd68f7ddb50cea5cdaf95f53eab824b8111ec855b3c90aeedee13a27"
-metafile = true
-
-[[files]]
-file = "index/mods/ntm-space.pw.toml"
-hash = "ab3e6c39d6de02150bc1dda2977bd810893256f5a1fb2532d1a42f783a3f62b4"
 metafile = true
 
 [[files]]

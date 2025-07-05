@@ -1,0 +1,15 @@
+name = "Hbm-s-Nuclear-Tech-GIT"
+filename = "HBM-NTM-.1.0.27_X5379_H261.jar"
+side = "both"
+
+[download]
+url = "https://github.com/JameH2/Hbm-s-Nuclear-Tech-GIT/releases/download/xspace37b/HBM-NTM-.1.0.27_X5379_H261.jar"
+hash-format = "sha256"
+hash = "a31f2feae372203a9536db37d7136fe24036cde42ba263d91f8f9108f2dc3508"
+
+[update]
+[update.github]
+branch = "space-travel-twopointfive"
+regex = "^.+(?<!-api|-dev|-dev-preshadow|-sources)\\.jar$"
+slug = "JameH2/Hbm-s-Nuclear-Tech-GIT"
+tag = "xspace37b"
