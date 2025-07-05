@@ -89,7 +89,7 @@ jobs:
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
-          unzip -q "lwjgl3ify-$version-multimc.zip" -d lwjgl3ify-multimc
+          unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
           zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}-multimc.zip"
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-${version}.jar"
 
