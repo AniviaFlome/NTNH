@@ -81,8 +81,11 @@ jobs:
           cp -r lwjgl3ify-${version}.jar modpack-lwjgl3ify/.minecraft/mods/
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
-          java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
-          cp -r index/mods modpack-lwjgl3ify/.minecraft
+          mkdir -p ./packwiz
+          mv packwiz-installer-bootstrap.jar ./packwiz
+          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          cp -r modpack-lwjgl3ify/.minecraft/.index packwiz
+          cp -r packwiz/.index/ modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
@@ -118,8 +121,12 @@ jobs:
           ' > modpack-prism/mmc-pack.json
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
-          java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
-          cp -r index/mods modpack-prism/.minecraft
+          mkdir -p ./packwiz
+          mv packwiz-installer-bootstrap.jar ./packwiz
+          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          cp -r modpack-prism/.minecraft/.index packwiz
+          cp -r packwiz/.index/ modpack-prism/.minecraft/mods/
+
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
         run: |
