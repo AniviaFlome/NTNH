@@ -84,7 +84,6 @@ jobs:
           mkdir -p ./packwiz
           mv packwiz-installer-bootstrap.jar ./packwiz
           java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
-          cp -r modpack-lwjgl3ify/.minecraft/.index packwiz
           cp -r packwiz/.index/ modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
@@ -123,8 +122,7 @@ jobs:
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           mkdir -p ./packwiz
           mv packwiz-installer-bootstrap.jar ./packwiz
-          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
-          cp -r modpack-prism/.minecraft/.index packwiz
+          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
           cp -r packwiz/.index/ modpack-prism/.minecraft/mods/
 
       - name: Run Prism Script
