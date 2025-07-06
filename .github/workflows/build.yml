@@ -123,7 +123,7 @@ jobs:
           mkdir -p ./packwiz
           mv packwiz-installer-bootstrap.jar ./packwiz
           java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
-          cp -r packwiz/.index/ modpack-prism/.minecraft/mods/
+          cp -r packwiz/mods/.index/ modpack-prism/.minecraft/mods/
 
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
