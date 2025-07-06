@@ -29,11 +29,6 @@ on:
         required: true
         type: boolean
         default: true
-      native:
-        description: 'Do you want to build native package?'
-        required: true
-        type: boolean
-        default: true
       release_version:
         description: 'Release Version'
         required: true
@@ -134,12 +129,6 @@ jobs:
           echo "${{ github.event.inputs.instance_cfg }}" > modpack-prism/instance.cfg
           echo "${{ github.event.inputs.mmc_pack_json }}" > modpack-prism/mmc-pack.json
 
-      - name: Run Native Script
-        if: github.event.inputs.native == 'true'
-        run: |
-          mkdir -p modpack-native
-          cp -r ntnh/* modpack-native
-
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
         uses: actions/upload-artifact@v4
@@ -156,21 +145,12 @@ jobs:
           path: modpack-prism
           include-hidden-files: true
 
-      - name: Upload Native Artifact
-        if: github.event.inputs.native == 'true' && github.event.inputs.output == 'artifact'
-        uses: actions/upload-artifact@v4
-        with:
-          name: NTNH-${{ github.event.inputs.release_version }}-Native
-          path: modpack-native
-          include-hidden-files: true
-
       - name: Zip Files
         if: github.event.inputs.output == 'release'
         continue-on-error: true
         run: |
           zip -r "NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip" ntnh/modpack-lwjgl3ify/
           zip -r "NTNH-${{ github.event.inputs.release_version }}-Prism.zip" ntnh/modpack-prism/
-          zip -r "NTNH-${{ github.event.inputs.release_version }}-Native.zip" ntnh/modpack-native/
 
       - name: Create GitHub Release
         if: github.ref_type == 'tag' && github.event.inputs.output == 'release'
@@ -183,4 +163,3 @@ jobs:
           files: |
             NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip
             NTNH-${{ github.event.inputs.release_version }}-Prism.zip
-            NTNH-${{ github.event.inputs.release_version }}-Native.zip
