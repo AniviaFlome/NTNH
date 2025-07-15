@@ -9,42 +9,6 @@ file = "+UpdateScript_DoYouTrustMe-client.sh"
 hash = "330612f7a6ff4415730dfe626830ee5bdde0d87af211d3a6ea3f20527a4f74e3"
 
 [[files]]
-file = ".github/ISSUE_TEMPLATE/000-report-crash.yml"
-hash = "7ea1b286d8e7ddfe1dfe080b820808140ee4233cccc877a530d63392587687da"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/001-report-bug.yml"
-hash = "4e780641e36b38424f9226e4689673d374b36df53467e4bc0318d7ce6775d131"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/002-suggest-a-change.yml"
-hash = "89dd790735b35cddac8f5f9fa9e4c03b25ec5c92acf900601462f33c3e0d302d"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/003-request-new-feature.yml"
-hash = "9ab2cd00e92af86d496ea20bbd6a472a7a0642da39a1026046c1508258d2d9c5"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/004-suggest-a-new-mod.yml"
-hash = "0afc7d15c6646a0c74b60adbb8535806aff416f4d7a0408045326e439c8355c0"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/100-request-unofficial-server-inclusion.yml"
-hash = "24e481c11e6e65ad66ea0af62d8f7915656bf90a4f8ecc687eddc914b115a8de"
-
-[[files]]
-file = ".github/ISSUE_TEMPLATE/999-create-reminder.yml"
-hash = "621d90125ed2e93c93a348ccd73dc7e4eaa3e8400ab0ce4a517696615124be79"
-
-[[files]]
-file = ".github/docs/CONTRIBUTING.md"
-hash = "72f84726b79c20678283e77e11074b2ce4f1bbf2194c22fde614473e67604944"
-
-[[files]]
-file = ".github/workflows/build.yml"
-hash = "9f6d455bcbcf2c3b5f4a9777d9d2d58a44d27be88050d3e4349bab6862918434"
-
-[[files]]
 file = "LICENSE"
 hash = "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
 
