@@ -56,8 +56,7 @@ jobs:
           version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
           zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version-multimc.zip"
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version.jar"
-          pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
-          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
+          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
           unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
@@ -85,8 +84,7 @@ jobs:
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
         run: |
-          pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
-          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
+          pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 
           mkdir -p modpack-prism/.minecraft/mods
           cp -r ntnh/* modpack-prism/.minecraft/
