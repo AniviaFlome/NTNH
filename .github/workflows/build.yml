@@ -11,7 +11,6 @@ on:
           - "main"
           - "twopointzero"
           - "packwiz"
-
       output:
         type: choice
         required: true
@@ -39,7 +38,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
@@ -78,13 +76,11 @@ jobs:
           cp -r lwjgl3ify-multimc/patches modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/libraries modpack-lwjgl3ify/
           cp -r lwjgl3ify-multimc/mmc-pack.json modpack-lwjgl3ify/
-          cp -r lwjgl3ify-${version}.jar modpack-lwjgl3ify/.minecraft/mods/
+          cp -r "lwjgl3ify-${version}.jar" modpack-lwjgl3ify/.minecraft/mods/
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
-          mkdir -p ./packwiz
-          mv packwiz-installer-bootstrap.jar ./packwiz
-          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
-          cp -r packwiz/mods/.index/ modpack-lwjgl3ify/.minecraft/mods/
+          java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          cp -r .minecraft/mods/* modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
@@ -92,7 +88,7 @@ jobs:
           pack_version=$(curl -s https://api.github.com/repos/packwiz/packwiz-installer-bootstrap/releases/latest | jq -r .tag_name)
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/$pack_version/packwiz-installer-bootstrap.jar"
 
-          mkdir -p modpack-prism/.minecraft
+          mkdir -p modpack-prism/.minecraft/mods
           cp -r ntnh/* modpack-prism/.minecraft/
 
           printf "
@@ -120,19 +116,8 @@ jobs:
           ' > modpack-prism/mmc-pack.json
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
-          mkdir -p ./packwiz
-          mv packwiz-installer-bootstrap.jar ./packwiz
-          java -jar ./packwiz/packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
-          cp -r packwiz/mods/.index/ modpack-prism/.minecraft/mods/
-
-      - name: Run Prism Script
-        if: github.event.inputs.prism == 'true'
-        run: |
-          mkdir -p modpack-prism/.minecraft
-          cp -r ntnh/* modpack-prism/.minecraft/
-
-          echo "${{ github.event.inputs.instance_cfg }}" > modpack-prism/instance.cfg
-          echo "${{ github.event.inputs.mmc_pack_json }}" > modpack-prism/mmc-pack.json
+          java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
+          cp -r .minecraft/mods/* modpack-prism/.minecraft/mods/
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
@@ -154,8 +139,8 @@ jobs:
         if: github.event.inputs.output == 'release'
         continue-on-error: true
         run: |
-          zip -r "NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip" ntnh/modpack-lwjgl3ify/
-          zip -r "NTNH-${{ github.event.inputs.release_version }}-Prism.zip" ntnh/modpack-prism/
+          zip -r "NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip" modpack-lwjgl3ify/
+          zip -r "NTNH-${{ github.event.inputs.release_version }}-Prism.zip" modpack-prism/
 
       - name: Create GitHub Release
         if: github.ref_type == 'tag' && github.event.inputs.output == 'release'
