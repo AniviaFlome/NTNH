@@ -69,8 +69,8 @@ jobs:
         if: github.event.inputs.lwjgl3ify == 'true'
         run: |
           version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
-          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version-multimc.zip"
-          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/$version/lwjgl3ify-$version.jar"
+          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/latest/lwjgl3ify-$version-multimc.zip"
+          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/latest/lwjgl3ify-$version.jar"
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip"
@@ -79,7 +79,7 @@ jobs:
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
-          rm -r modpack-lwjgl3ify/.minecraft/mods/* modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml
+
 
           printf "
           [General]
@@ -94,6 +94,7 @@ jobs:
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          rm -r modpack-lwjgl3ify/.minecraft/mods/* modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml
           cp -r mods/.index/ modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
@@ -103,7 +104,6 @@ jobs:
 
           mkdir -p modpack-prism/.minecraft/mods
           cp -r ntnh/* modpack-prism/.minecraft/
-          rm -r modpack-prism/.minecraft/mods/* modpack-prism/.minecraft/pack.toml modpack-prism/.minecraft/index.toml
 
           printf "
           [General]
@@ -130,6 +130,7 @@ jobs:
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
+          rm -r modpack-prism/.minecraft/mods/* modpack-prism/.minecraft/pack.toml modpack-prism/.minecraft/index.toml
           cp -r mods/* modpack-prism/.minecraft/mods/
 
       - name: Run Curseforge Script
