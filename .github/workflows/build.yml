@@ -95,7 +95,7 @@ jobs:
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
           rm -r modpack-lwjgl3ify/.minecraft/mods/* modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml
-          cp -r mods/.index/ modpack-lwjgl3ify/.minecraft/mods/
+          cp -r mods/* modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
