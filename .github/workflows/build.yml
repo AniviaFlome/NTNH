@@ -136,18 +136,14 @@ jobs:
       - name: Run Curseforge Script
         if: github.event.inputs.curseforge == 'true'
         run: |
-          cd ntnh
           packwiz refresh
-          packwiz cf export -o NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
-          cd ..
+          packwiz cf export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
 
       - name: Run Modrinth Script
         if: github.event.inputs.curseforge == 'true'
         run: |
-          cd ntnh
           packwiz refresh
-          packwiz mr export -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
-          cd ..
+          packwiz mr export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
@@ -170,7 +166,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Curseforge
-          path: NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
           include-hidden-files: true
 
       - name: Upload Modrinth Artifact
@@ -178,7 +173,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Modrinth
-          path: NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
           include-hidden-files: true
 
       - name: Zip Files
