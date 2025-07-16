@@ -79,7 +79,7 @@ jobs:
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
-          rm -r modpack-lwjfl3ify/.minecraft/mods modpack-lwjfl3ify/.minecraft/.git modpack-lwjfl3ify/.minecraft/.github modpack-lwjfl3ify/.minecraft/pack.toml modpack-lwjfl3ify/.minecraft/index.toml modpack-lwjfl3ify/.minecraft/.packwizignore
+          rm -r modpack-lwjgl3ify/.minecraft/mods modpack-lwjgl3ify/.minecraft/.git modpack-lwjgl3ify/.minecraft/.github modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml modpack-lwjgl3ify/.minecraft/.packwizignore
 
           printf "
           [General]
