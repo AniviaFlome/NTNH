@@ -161,16 +161,18 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Curseforge
-          path: ./
+          path: NTNH-${{ github.event.inputs.release_version }}-Curseforge
           include-hidden-files: true
+          compression-level: 0
 
       - name: Upload Modrinth Artifact
         if: github.event.inputs.curseforge == 'true' && github.event.inputs.output == 'artifact'
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Modrinth
-          path: ./
+          path: NTNH-${{ github.event.inputs.release_version }}-Modrinth
           include-hidden-files: true
+          compression-level: 0
 
       - name: Zip Files
         if: github.event.inputs.output == 'release'
