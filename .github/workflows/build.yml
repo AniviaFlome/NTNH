@@ -69,8 +69,8 @@ jobs:
         if: github.event.inputs.lwjgl3ify == 'true'
         run: |
           version=$(curl -s https://api.github.com/repos/GTNewHorizons/lwjgl3ify/releases/latest | jq -r .tag_name)
-          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/latest/lwjgl3ify-$version-multimc.zip"
-          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/latest/lwjgl3ify-$version.jar"
+          zip_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-$version-multimc.zip"
+          jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-$version.jar"
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip" 
