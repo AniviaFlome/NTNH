@@ -61,6 +61,8 @@ jobs:
           java-package: "jre"
 
       - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
 
       - name: Install packwiz
         run: go install github.com/packwiz/packwiz@latest
@@ -79,7 +81,6 @@ jobs:
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
-
 
           printf "
           [General]
