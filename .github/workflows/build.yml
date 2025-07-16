@@ -79,6 +79,7 @@ jobs:
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-lwjgl3ify/.minecraft/pack.toml -g
+          cp -r mods/.index/ modpack-lwjgl3ify/.minecraft/mods/
 
       - name: Run Prism Script
         if: github.event.inputs.prism == 'true'
@@ -114,6 +115,7 @@ jobs:
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
+          cp -r mods/.index/ modpack-prism/.minecraft/mods/
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
