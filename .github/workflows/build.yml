@@ -138,7 +138,7 @@ jobs:
       - name: Run Modrinth Script
         if: github.event.inputs.curseforge == 'true'
         run: |
-          packwiz mr export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
+          packwiz mr export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.mrpack
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
