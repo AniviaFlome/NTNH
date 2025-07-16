@@ -28,6 +28,16 @@ on:
         required: true
         type: boolean
         default: true
+      curseforge:
+        description: 'Do you want to build curseforge package?'
+        required: true
+        type: boolean
+        default: true
+      modrinth:
+        description: 'Do you want to build modritnh package?'
+        required: true
+        type: boolean
+        default: true
       release_version:
         description: 'Release Version'
         required: true
@@ -38,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
         with:
           path: ntnh
           ref: ${{ github.event.inputs.branch }}
@@ -49,6 +59,11 @@ jobs:
           distribution: "temurin"
           java-version: "21"
           java-package: "jre"
+
+      - uses: actions/setup-go@v5
+
+      - name: Install packwiz
+        run: go install github.com/packwiz/packwiz@latest
 
       - name: Run lwjgl3ify Script
         if: github.event.inputs.lwjgl3ify == 'true'
@@ -64,10 +79,10 @@ jobs:
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
+          rm -r modpack-lwjfl3ify/.minecraft/mods modpack-lwjfl3ify/.minecraft/.git modpack-lwjfl3ify/.minecraft/.github modpack-lwjfl3ify/.minecraft/pack.toml modpack-lwjfl3ify/.minecraft/index.toml modpack-lwjfl3ify/.minecraft/.packwizignore
 
           printf "
           [General]
-          name=NTNH-${{ github.event.inputs.release_version }}
           iconKey=default
           InstanceType=OneSix
           " > modpack-lwjgl3ify/instance.cfg
@@ -88,10 +103,10 @@ jobs:
 
           mkdir -p modpack-prism/.minecraft/mods
           cp -r ntnh/* modpack-prism/.minecraft/
+          rm -r modpack-prism/.minecraft/mods modpack-prism/.minecraft/.git modpack-prism/.minecraft/.github modpack-prism/.minecraft/pack.toml modpack-prism/.minecraft/index.toml modpack-prism/.minecraft/.packwizignore
 
           printf "
           [General]
-          name=NTNH-${{ github.event.inputs.release_version }}
           iconKey=default
           InstanceType=OneSix
           " > modpack-prism/instance.cfg
@@ -115,7 +130,23 @@ jobs:
 
           curl -L "$pack_url" -o "packwiz-installer-bootstrap.jar"
           java -jar packwiz-installer-bootstrap.jar modpack-prism/.minecraft/pack.toml -g
-          cp -r mods/.index/ modpack-prism/.minecraft/mods/
+          cp -r mods/* modpack-prism/.minecraft/mods/
+
+      - name: Run Curseforge Script
+        if: github.event.inputs.curseforge == 'true'
+        run: |
+          cd ntnh
+          packwiz refresh
+          packwiz cf export -o NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
+          cd ..
+
+      - name: Run Modrinth Script
+        if: github.event.inputs.curseforge == 'true'
+        run: |
+          cd ntnh
+          packwiz refresh
+          packwiz mr export -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
+          cd ..
 
       - name: Upload lwjgl3ify Artifact
         if: github.event.inputs.lwjgl3ify == 'true' && github.event.inputs.output == 'artifact'
@@ -131,6 +162,22 @@ jobs:
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-MMC_Prism
           path: modpack-prism
+          include-hidden-files: true
+
+      - name: Upload Curseforge Artifact
+        if: github.event.inputs.curseforge == 'true' && github.event.inputs.output == 'artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-${{ github.event.inputs.release_version }}-Curseforge
+          path: NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
+          include-hidden-files: true
+
+      - name: Upload Modrinth Artifact
+        if: github.event.inputs.curseforge == 'true' && github.event.inputs.output == 'artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTNH-${{ github.event.inputs.release_version }}-Modrinth
+          path: NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
           include-hidden-files: true
 
       - name: Zip Files
@@ -151,3 +198,5 @@ jobs:
           files: |
             NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip
             NTNH-${{ github.event.inputs.release_version }}-Prism.zip
+            NTNH-${{ github.event.inputs.release_version }}-Curseforge
+            NTNH-${{ github.event.inputs.release_version }}-Modrinth
