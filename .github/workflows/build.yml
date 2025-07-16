@@ -79,7 +79,7 @@ jobs:
 
           mkdir -p modpack-lwjgl3ify/.minecraft/mods
           cp -r ntnh/* modpack-lwjgl3ify/.minecraft/
-          rm -r modpack-lwjgl3ify/.minecraft/mods/ modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml
+          rm -r modpack-lwjgl3ify/.minecraft/mods/* modpack-lwjgl3ify/.minecraft/pack.toml modpack-lwjgl3ify/.minecraft/index.toml
 
           printf "
           [General]
@@ -103,7 +103,7 @@ jobs:
 
           mkdir -p modpack-prism/.minecraft/mods
           cp -r ntnh/* modpack-prism/.minecraft/
-          rm -r modpack-prism/.minecraft/mods/ modpack-prism/.minecraft/pack.toml modpack-prism/.minecraft/index.toml
+          rm -r modpack-prism/.minecraft/mods/* modpack-prism/.minecraft/pack.toml modpack-prism/.minecraft/index.toml
 
           printf "
           [General]
