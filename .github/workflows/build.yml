@@ -73,7 +73,6 @@ jobs:
           jar_url="https://github.com/GTNewHorizons/lwjgl3ify/releases/download/latest/lwjgl3ify-$version.jar"
           pack_url="https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 
-          cat ${version} #Debug
           curl -L "$zip_url" -o "lwjgl3ify-${version}-multimc.zip" 
           unzip -q "lwjgl3ify-${version}-multimc.zip" -d lwjgl3ify-multimc
           curl -L "$jar_url" -o "lwjgl3ify-${version}.jar"
