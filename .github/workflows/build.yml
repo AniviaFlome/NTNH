@@ -3,14 +3,6 @@ name: Build NTNH Packages
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        type: choice
-        required: true
-        description: "Which branch you want to build?"
-        options:
-          - "main"
-          - "twopointzero"
-          - "packwiz"
       output:
         type: choice
         required: true
@@ -48,11 +40,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
 
       - uses: actions/checkout@v4
         with:
           path: ntnh
-          ref: ${{ github.event.inputs.branch }}
+          ref: ${{ steps.extract_branch.outputs.branch }}
 
       - uses: actions/setup-java@v4
         with:
