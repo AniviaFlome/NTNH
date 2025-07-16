@@ -132,13 +132,11 @@ jobs:
       - name: Run Curseforge Script
         if: github.event.inputs.curseforge == 'true'
         run: |
-          packwiz refresh --pack-file ntnh/pack.toml
           packwiz cf export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
 
       - name: Run Modrinth Script
         if: github.event.inputs.curseforge == 'true'
         run: |
-          packwiz refresh --pack-file ntnh/pack.toml
           packwiz mr export -y --pack-file ntnh/pack.toml -o NTNH-${{ github.event.inputs.release_version }}-Modrinth.zip
 
       - name: Upload lwjgl3ify Artifact
