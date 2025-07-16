@@ -161,7 +161,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Curseforge
-          path: NTNH-${{ github.event.inputs.release_version }}-Curseforge
+          path: NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
           include-hidden-files: true
           compression-level: 0
 
@@ -170,7 +170,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTNH-${{ github.event.inputs.release_version }}-Modrinth
-          path: NTNH-${{ github.event.inputs.release_version }}-Modrinth
+          path: NTNH-${{ github.event.inputs.release_version }}-Modrinth.mrpack
           include-hidden-files: true
           compression-level: 0
 
@@ -192,5 +192,5 @@ jobs:
           files: |
             NTNH-${{ github.event.inputs.release_version }}-lwjgl3ify.zip
             NTNH-${{ github.event.inputs.release_version }}-Prism.zip
-            NTNH-${{ github.event.inputs.release_version }}-Curseforge
-            NTNH-${{ github.event.inputs.release_version }}-Modrinth
+            NTNH-${{ github.event.inputs.release_version }}-Curseforge.zip
+            NTNH-${{ github.event.inputs.release_version }}-Modrinth.mrpack
