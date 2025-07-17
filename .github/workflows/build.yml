@@ -40,14 +40,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
-
       - uses: actions/checkout@v4
         with:
           path: ntnh
-          ref: ${{ steps.extract_branch.outputs.branch }}
+          ref: main
 
       - uses: actions/setup-java@v4
         with:
