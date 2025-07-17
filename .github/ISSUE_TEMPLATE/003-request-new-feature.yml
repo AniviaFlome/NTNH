@@ -1,7 +1,6 @@
 name: 'Request New Feature'
 description: Request a new feature.
 labels: 
-- "Status: Triage"
 - "Suggestion"
 body:
 - type: markdown
